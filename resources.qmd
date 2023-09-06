@@ -1,0 +1,25 @@
+---
+title: "Resources"
+format: html
+editor: visual
+---
+
+Resources
+
+-   [Mastering Shiny](https://mastering-shiny.org/)
+
+-   [Widget Gallery](https://shiny.rstudio.com/gallery/widget-gallery.html)
+
+-   [Shiny Articles](https://shiny.rstudio.com/articles/) (some pretty advanced stuff here, the article about exporting data *from* Shiny is useful).
+
+-   [Shiny Gallery](https://shiny.rstudio.com/gallery/) (check out the cool layouts)
+
+Tricks
+
+-   Use `validate()` and `req()` to avoid buggy stuff.
+
+-   [Use jobs to keep your console open and check changes automatically.](https://github.com/sol-eng/background-jobs/tree/main/shiny-job)
+
+-   Use `reactiveConsole(TRUE)` and `input <- reactiveValues()` to see what's going on.
+
+-   Use observers to display messages or data. As a debugger
