@@ -10,5 +10,4 @@ custom_plot <- function(y_var, country_list, data) {
       mapping = hcaes(year, !!y_var, group = iso3c, name = country)
     )
   
-  
 }
