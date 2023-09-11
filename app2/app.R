@@ -4,12 +4,23 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 library(DT)
+library(gargle)
+library(googlesheets4) #*
 library(bslib) 
 
 
 # Data --------------------------------------------------------------------
 
-data <- read.csv("css_syllabus.csv")
+# data <- read.csv("css_syllabus.csv")
+
+gs4_deauth()
+options( ## see: https://gargle.r-lib.org/articles/non-interactive-auth.html#project-level-oauth-cache
+  gargle_oauth_cache = ".secrets",
+  gargle_oauth_email = TRUE
+)
+## replace this with org spreadsheet
+data <- googlesheets4::range_read("https://docs.google.com/spreadsheets/d/19Yohd8eabvvg59jmwtn4vbcOmmAiv3LfLMg1nl4kf_A/edit?usp=sharing")
+
 data$date_formatted <- as.Date(ISOdate(data$Publication.Year, 1, 1))
 
 data <- data |> 
