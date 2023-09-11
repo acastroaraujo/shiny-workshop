@@ -4,7 +4,6 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 library(DT)
-library(gargle)
 library(googlesheets4) #*
 library(bslib) 
 
