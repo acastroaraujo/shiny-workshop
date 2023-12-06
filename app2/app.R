@@ -80,7 +80,7 @@ server <- function(input, output) {
     
     table <- if (is.null(input$author)) table else table |> filter(grepl(paste(input$author, collapse = "|"), Author)) ## added paste regex collapse
     table <- if (is.null(input$pubs)) table else table |> filter(Publication.Title == input$pubs)
-    table <- if (input$title == "") table else table |> filter(grepl(paste(input$title, collapse = "|", Title)))
+    table <- if (input$title == "") table else table |> filter(grepl(paste(tolower(input$title), collapse = "|"), tolower(Title)))
     table <- if (is.null(input$columns)) table else table |> select(any_of(cols))
     
     return(table)
